@@ -1,6 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { User } from '../../domain/user/user.aggregate';
 import { UserRepository } from '../../infrastructure/repository/user.repository';
+import { User } from '../../domain/user/user';
+
 
 @Injectable()
 export class UserService {
@@ -16,6 +17,15 @@ export class UserService {
     const user = await this.userRepository.findUserById(id);
     if (!user) {
       throw new NotFoundException(`User with ID ${id} not found`);
+    }
+    return user;
+  }
+
+  // find user by email
+  async findByEmail(email: string): Promise<User> {
+    const user = await this.userRepository.findUserById(email);
+    if (!user) {
+      throw new NotFoundException(`User with email ${email} not found`);
     }
     return user;
   }

@@ -2,7 +2,7 @@ import { Table, Column, PrimaryKey, DataType } from 'sequelize-typescript';
 import { BaseEntity } from './base.entity';
 
 @Table({ tableName: 'users', timestamps: false })
-export class UserEntity extends BaseEntity<UserEntity>  {
+export class DocumentEntity extends BaseEntity<DocumentEntity>  {
   @PrimaryKey
   @Column({
       type: DataType.UUID,
@@ -11,11 +11,8 @@ export class UserEntity extends BaseEntity<UserEntity>  {
   id: string;
 
   @Column({ type: DataType.STRING, allowNull: false, unique: true })
-  email: string;
+  documentName: string;
 
   @Column({ type: DataType.STRING, allowNull: false })
-  password: string;
-
-  @Column({ type: DataType.ENUM('admin', 'editor', 'viewer'), allowNull: false })
-  role: string;
+  documentDetails: string;
 }

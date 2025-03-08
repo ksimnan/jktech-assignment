@@ -1,25 +1,25 @@
 import { Column, DataType, Model } from 'sequelize-typescript';
 
-export class BaseEntity<T> extends Model<T> {
+export class BaseEntity<T extends {}> extends Model<T> {
     @Column({
         type: DataType.DATE,
         allowNull: false,
     })
-    CreatedDateTime: Date;
+    createdDateTime: Date;
 
     @Column({
         type: DataType.UUID,
         allowNull: false,
     })
-    CreatedBy: string;
+    createdBy: string;
 
     @Column({
         type: DataType.DATE,
     })
-    ModifiedDateTime: Date;
+    modifiedDateTime?: Date;
 
     @Column({
         type: DataType.UUID,
     })
-    ModifiedBy: string;
+    modifiedBy?: string;
 }
