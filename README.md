@@ -44,8 +44,32 @@ The primary goal of this backend is to manage users, provide document management
 - PostgreSQL database
 - Python backend (for ingestion functionality)
 
-### 1. Clone the repository
+### 1. Install dependencies
 
 ```bash
-git clone https://github.com/yourusername/user-document-management-backend.git
-cd user-document-management-backend
+yarn install
+
+### 2. Set up environment variables
+
+```bash
+DB_HOST=localhost
+DB_PORT=5432
+DB_USERNAME=your_db_user
+DB_PASSWORD=your_db_password
+DB_NAME=your_db_name
+PORT=3000
+
+### 3. Run the application
+
+```bash
+yarn start:dev
+
+### 4. Run test Caees
+
+```bash
+yarn test
+
+
+
+
+
