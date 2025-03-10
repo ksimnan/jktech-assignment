@@ -48,6 +48,41 @@ The primary goal of this backend is to manage users, provide document management
 
 ```bash
 yarn install
+```
+
+### 2. Run Application
+
+```bash
+yarn start
+
+### to start in debug mode
+yarn start:dev
+```
+
+### 2. Run Jest Test Cases
+
+```bash
+yarn test
+```
+
+## Running mock service for ingestion
+
+### 1. Install Flask using pip:
+
+```bash
+pip install flask
+```
+
+### 2. Navigate to the directory where the script is saved and tart the Flask app
+
+```bash
+python mock_ingestion_service.py
+```
+
+
+
+
+
 
 
 
